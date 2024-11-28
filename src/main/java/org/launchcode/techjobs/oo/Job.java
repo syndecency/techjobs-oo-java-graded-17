@@ -101,12 +101,21 @@ public class Job {
     //custom toString method
     @Override
     public String toString() {
-        return "ID: " + this.getId() +
-                "\nName: " + getName() +
-                "\nEmployer: " + getEmployer() +
-                "\nLocation: " + getLocation() +
-                "\nPosition: " + getPositionType() +
-                "\nCore Competency: " + getCoreCompetency();
+        if (getName().equals("") &&
+        getEmployer().getValue().equals("") &&
+                getLocation().getValue().equals("") &&
+                getPositionType().getValue().equals("") &&
+                getCoreCompetency().getValue().equals("")) {
+            return System.lineSeparator() + "OOPS! This job does not seem to exist." + System.lineSeparator();
+        }
+        return System.lineSeparator() +
+                "ID: " + this.getId() + System.lineSeparator() +
+                "Name: " + (getName().equals("") ? "Data not available" : getName()) + System.lineSeparator() +
+                "Employer: " + (getEmployer().getValue().equals("") ? "Data not available" : getEmployer().getValue()) + System.lineSeparator() +
+                "Location: " + (getLocation().getValue().equals("") ? "Data not available" : getLocation().getValue()) + System.lineSeparator() +
+                "Position Type: " + (getPositionType().getValue().equals("") ? "Data not available" : getPositionType().getValue()) + System.lineSeparator() +
+                "Core Competency: " + (getCoreCompetency().getValue().equals("") ? "Data not available" : getCoreCompetency().getValue()) +
+                System.lineSeparator();
     }
 
 }

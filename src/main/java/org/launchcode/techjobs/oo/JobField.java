@@ -2,17 +2,17 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public abstract class JobAbstract {
+public abstract class JobField {
     private int id;
     private static int nextId = 1; //shared across all instances of the class
     private String value;
 
-    public JobAbstract() {
+    public JobField() {
         id = nextId;
         nextId++;
     }
 
-    public JobAbstract(String value) {
+    public JobField(String value) {
         this();
         this.value = value;
     }
@@ -26,7 +26,7 @@ public abstract class JobAbstract {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        JobAbstract that = (JobAbstract) o;
+        JobField that = (JobField) o;
         return id == that.id;
     }
 

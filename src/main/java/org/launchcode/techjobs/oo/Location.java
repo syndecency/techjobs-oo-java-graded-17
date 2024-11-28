@@ -1,28 +1,24 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
-public class Location {
-
+public class Location extends JobField {
+    /* DRY
     private int id;
     private static int nextId = 1;
     private String value;
+    */
 
     public Location() {
-        id = nextId;
-        nextId++;
+        super();
     }
 
     public Location(String value) {
-        this();
-        this.value = value;
-
+        super(value);
     }
 
     // TODO: Add a constructor that takes a string as a parameter and assigns it to the 'value' field. The
     //  constructor should also call the empty constructor in order to initialize the 'id' field.
 
-
+/* DRY
     // Custom toString, equals, and hashCode methods:
 
     @Override
@@ -56,5 +52,7 @@ public class Location {
     public void setValue(String value) {
         this.value = value;
     }
+
+ */
 
 }

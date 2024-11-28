@@ -2,24 +2,23 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class Employer {
-
+public class Employer extends JobField{
+/* DRY
     private int id;
     private static int nextId = 1;
     private String value;
+ */
 
     public Employer() {
-        id = nextId;
-        nextId++;
+        super();
     }
 
     public Employer(String value) {
-        this();
-        this.value = value;
+        super(value);
     }
 
     // Custom toString, equals, and hashCode methods:
-
+/* DRY
     @Override
     public String toString() {
         return value;
@@ -51,5 +50,7 @@ public class Employer {
     public void setValue(String value) {
         this.value = value;
     }
+
+ */
 
 }
